@@ -46,7 +46,7 @@ function sendNotifications(error, results, fields){
       console.log(hour_diff);
       
       if(hour_diff <= 24){
-
+        console.log('Sending SMS...');
         twilio.sendMessage({
             to: phone_number, 
             from: twilio_config.phone_number,
@@ -74,3 +74,5 @@ function startTask(){
 }
 
 new CronJob('0 12 * * *', startTask, null, true, time.config.timezone);
+
+startTask();

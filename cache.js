@@ -7,6 +7,12 @@ var CronJob = require('cron').CronJob;
 function addAppointment(event_id, summary, start, end){
 console.log(event_id, summary, start, end);
 
+  start = start.replace('T', ' ');
+  start = start.replace('-03:00', '');
+
+  end = end.replace('T', ' ');
+  end = end.replace('-03:00', '');  
+
   connection.db.query(
     "INSERT INTO appointments SET id = ?, summary = ?, datetime_start = ?, datetime_end = ?, notified = 0",
     [event_id, summary, start, end],
