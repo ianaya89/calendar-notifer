@@ -1,7 +1,5 @@
 var config = require('config');
 
-console.log(config);
-
 var db_config = config.get('db');
 var mysql = require('mysql');
 var connection = mysql.createConnection({

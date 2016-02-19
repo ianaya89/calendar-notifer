@@ -23,41 +23,36 @@ var server = app.listen(3000, function () {
 });
 
 function updateAccessToken(tokens, response) {
-
   connection.db.query(
-    "UPDATE users SET access_token = ? WHERE id = 1", 
-    [JSON.stringify(tokens)],
-    function(err, rows, fields){
-      if(!err){
+    "UPDATE users SET access_token = ? WHERE id = 1", [JSON.stringify(tokens)],
+
+    function(err, rows, fields) {
+      if (!err) {
         console.log('updated!');
         response.send('connected!');
-      }else{
+      }
+      else {
         console.log('error updating table');
         console.log(err);
         response.send('error occured, please try again');
       }
     }
   );
-
 }
 
-
-app.get('/login', function(req, res){
+app.get('/login', function(req, res) {
   var code = req.query.code;
-    console.log('login');
 
-  google.oauth2Client.getToken(code, function(err, tokens){
-    
-    if(!err){
+  google.oauth2Client.getToken(code, function(err, tokens) {
+    if (!err) {
       console.log('tokens');
       console.log(tokens);
       
       updateAccessToken(tokens, res);
-    
-    }else{
+    }
+    else {
       res.send('error getting token');
       console.log('error getting token');
     }
   });
-
 });

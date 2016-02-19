@@ -4,13 +4,13 @@
     },
 
     "me": {
-        "phone_number": ""
+        "phone_number": "+54 9 11 5346 7741"
     },
 
     "db": {
         "host": "localhost",
         "user": "root",
-        "password": "secret",
+        "password": "",
         "database": "calendar_notifier"
     },
 

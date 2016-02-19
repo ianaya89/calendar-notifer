@@ -22,7 +22,6 @@ function updateAppointment(id){
   );
 }
 
-
 function sendNotifications(error, results, fields){
 
   var phone_number = config.get('me.phone_number');
@@ -69,7 +68,6 @@ function sendNotifications(error, results, fields){
     }
   }
 }
-
 
 function startTask(){
   connection.db.query('SELECT * FROM appointments WHERE notified = 0', sendNotifications);
