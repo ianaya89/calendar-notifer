@@ -1,1 +1,5 @@
 node_modules/
+config/dev.json
+config/qa.json
+config/uat.json
+config/prod.json

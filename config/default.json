@@ -30,5 +30,4 @@
         "secret": "YOUR TWILIO SECRET",
         "phone_number": "+YOUR TWILIO PHONE NUMBER / SANDBOX NUMBER"
     }
-
 }
