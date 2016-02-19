@@ -5,6 +5,8 @@ var time = require('./common/time');
 var CronJob = require('cron').CronJob;
 
 function addAppointment(event_id, summary, start, end){
+console.log(event_id, summary, start, end);
+
   connection.db.query(
     "INSERT INTO appointments SET id = ?, summary = ?, datetime_start = ?, datetime_end = ?, notified = 0",
     [event_id, summary, start, end],
@@ -13,8 +15,8 @@ function addAppointment(event_id, summary, start, end){
       if (!err) {
         console.log('added!');
       }
-      else{
-        console.log('error adding to table');
+      else {
+        console.error(err);
       }
     }
   );
@@ -56,7 +58,6 @@ function cache(){
   }, getEvents);    
 }
 
-
 connection.db.query('SELECT access_token FROM users WHERE id = 1', function(error, results, fields){
   if(!error){
     var tokens = JSON.parse(results[0].access_token);
@@ -67,6 +68,6 @@ connection.db.query('SELECT access_token FROM users WHERE id = 1', function(erro
     });
 
     new CronJob('0 0 * * *', cache, null, true, time.config.timezone);
-    //cache(); //for testing
+    cache(); //for testing
   }
 });

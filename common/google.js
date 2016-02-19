@@ -7,8 +7,6 @@ var oauth2Client = new OAuth2(google_config.client_id, google_config.client_secr
 
 var calendar = google.calendar('v3');
 
-console.log(calendar);
-
 exports.oauth2Client = oauth2Client; 
 exports.calendar = calendar;
 exports.config = google_config;

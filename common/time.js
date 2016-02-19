@@ -1,12 +1,10 @@
 var config = require('config');
+var app_timezone = config.get('app.timezone');
+var moment = require('moment-timezone');
+moment.tz.setDefault(app_timezone);
 
-var db_config = config.get('db');
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: db_config.host,
-    user: db_config.user,
-    password: db_config.password,
-    database: db_config.database
-});
+exports.config = {
+    timezone: app_timezone
+};
 
-exports.db = connection;
+exports.moment = moment;

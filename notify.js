@@ -30,7 +30,7 @@ function sendNotifications(error, results, fields){
   console.log('results');
   console.log(results);
 
-  if(!error){ 
+  if (!error) { 
     for(var x in results){
 
       var id = results[x].id;
