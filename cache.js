@@ -74,6 +74,8 @@ connection.db.query('SELECT access_token FROM users WHERE id = 1', function(erro
     });
 
     new CronJob('0 0 * * *', cache, null, true, time.config.timezone);
-    cache(); //for testing
+    
+    // uncomment for testing
+    // cache();
   }
 });

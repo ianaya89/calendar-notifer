@@ -75,4 +75,5 @@ function startTask(){
 
 new CronJob('0 12 * * *', startTask, null, true, time.config.timezone);
 
-startTask();
+// uncomment for testing
+// startTask();
