@@ -1,0 +1,28 @@
+{
+  "name": "calendar-notifier",
+  "version": "1.0.0",
+  "description": "SMS google calendar notifier",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sms",
+    "calendar",
+    "google",
+    "notification",
+    "twilio"
+  ],
+  "author": "Ignacio Anaya <ignacio.anaya89@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^1.17.1",
+    "cron": "^1.1.0",
+    "express": "^4.13.3",
+    "googleapis": "^2.1.6",
+    "moment": "^2.10.6",
+    "moment-timezone": "^0.4.1",
+    "mysql": "felixge/node-mysql",
+    "twilio": "^2.6.0"
+  }
+}
