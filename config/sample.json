@@ -1,3 +1,4 @@
+// Replace your settings and rename this file as default.json
 {
     "app": {
         "timezone": "Asia/Manila"
@@ -15,8 +16,8 @@
     },
 
     "google":{
-        "client_id": "894676416547-6uv3o8dbq32pkjhonlm0a942dlg28ijk.apps.googleusercontent.com",
-        "client_secret": "lFcAm5jg-1Q6SBo9BKK0pTfP",
+        "client_id": "THE CLIENT ID OF YOUR GOOGLE APP",
+        "client_secret": "THE CLIENT SECRET OF YOUR GOOGLE APP",
         "redirect_uri": "http://localhost:3000/login",
         "access_type": "offline",
         "scopes": [
@@ -26,9 +27,8 @@
     },
 
     "twilio": {
-        "sid": "AC275347ddefd212fddbdc6c8d5df5dd11",
-        "secret": "ca35402e19f11cbda2887d108f5756c0",
-        "phone_number": "+1 202-350-4829"
+        "sid": "YOUR TWILIO SID",
+        "secret": "YOUR TWILIO SECRET",
+        "phone_number": "+YOUR TWILIO PHONE NUMBER / SANDBOX NUMBER"
     }
-
 }

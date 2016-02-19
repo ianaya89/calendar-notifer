@@ -21,7 +21,6 @@ function addAppointment(event_id, summary, start, end){
 
 }
 
-
 function getEvents(err, response){
 
   console.log('response');

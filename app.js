@@ -1,7 +1,6 @@
 var google = require('./common/google');
 var connection = require('./common/db');
 
-
 var express = require('express');
 var app = express();
 
@@ -11,19 +10,19 @@ app.get('/', function(req, res){
     scope: google.config.scopes
   });
 
-    res.send('<a href="' + url + '">login to google</a>');
+  res.send('<a href="' + url + '">login to google</a>');
 });
-
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
 
+  host = host || 'localhost';
+
   console.log('Example app listening at http://%s:%s', host, port);
 });
 
-
-function updateAccessToken(tokens, response){
+function updateAccessToken(tokens, response) {
 
   connection.db.query(
     "UPDATE users SET access_token = ? WHERE id = 1", 
